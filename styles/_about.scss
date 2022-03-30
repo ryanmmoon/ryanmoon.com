@@ -1,0 +1,21 @@
+.about {
+    max-width: 64%;
+
+    hr {
+        margin: 0 0 24px 0;
+    }
+
+    p {
+        padding: 0 24px 0 0;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .about {
+        max-width: 100%;
+
+        p {
+            padding: 0;
+        }
+    }
+}
