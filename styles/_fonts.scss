@@ -41,19 +41,18 @@
 /* Icons */
 @font-face {
   font-family: 'ryanmoon';
-  src: url('/fonts/ryanmoon/ryanmoon.eot?ww0qla');
-  src: url('/fonts/ryanmoon/ryanmoon.eot?ww0qla#iefix') format('embedded-opentype'),
-    url('/fonts/ryanmoon/ryanmoon.woff2?ww0qla') format('woff2'),
-    url('/fonts/ryanmoon/ryanmoon.ttf?ww0qla') format('truetype'),
-    url('/fonts/ryanmoon/ryanmoon.woff?ww0qla') format('woff'),
-    url('/fonts/ryanmoon/ryanmoon.svg?ww0qla#ryanmoon') format('svg');
+  src:  url('/fonts/ryanmoon/ryanmoon.eot?ss0906');
+  src:  url('/fonts/ryanmoon/ryanmoon.eot?ss0906#iefix') format('embedded-opentype'),
+    url('/fonts/ryanmoon/ryanmoon.woff2?ss0906') format('woff2'),
+    url('/fonts/ryanmoon/ryanmoon.ttf?ss0906') format('truetype'),
+    url('/fonts/ryanmoon/ryanmoon.woff?ss0906') format('woff'),
+    url('/fonts/ryanmoon/ryanmoon.svg?ss0906#ryanmoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ryanmoon' !important;
   font-style: normal;
@@ -67,22 +66,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-right:before {
+.icon-calendar:before {
+  content: "\e904";
+}
+
+.icon-layers:before {
   content: "\e900";
 }
 
-.icon-circle:before {
+.icon-link:before {
   content: "\e901";
 }
 
-.icon-link:before {
-  content: "\e909";
-}
-
-.icon-menu:before {
+.icon-zap:before {
   content: "\e902";
-}
-
-.icon-x:before {
-  content: "\e903";
 }

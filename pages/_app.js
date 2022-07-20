@@ -1,10 +1,13 @@
 // Modules
 import SEO from '../seo.config'
 
+import { ChakraProvider } from "@chakra-ui/react"
+import theme from '../theme/theme.js'
+
 import { DefaultSeo } from 'next-seo'
 
 // Components
-import Header from 'components/Header'
+import Header from 'components/header/Header'
 import Footer from 'components/Footer'
 
 // Style
@@ -15,11 +18,13 @@ function App({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <Header />
-      <main id="main">
-        <Component {...pageProps} />
-      </main>
-      <Footer />
+      <ChakraProvider theme={theme} >
+        <Header />
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </ChakraProvider>
     </>
   )
 }

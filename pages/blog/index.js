@@ -4,6 +4,17 @@ import Link from 'next/link'
 import { getPosts } from '../api/posts'
 import { format } from 'date-fns'
 import { NextSeo } from 'next-seo'
+import {
+  Box,
+  Image,
+  Grid,
+  Text,
+  Heading,
+} from '@chakra-ui/react'
+
+// Components
+import Transition from 'components/Transition'
+import Center from 'components/Center'
 
 // Get posts from Ghost.js
 export const getStaticProps = async () => {
@@ -22,38 +33,45 @@ function Blog({ posts }) {
 
   const SEO = {
     title: 'Writings - Ryan Moon',
-    description: 'Tutorials and other helpful resources for learning about web development and security practices.',
+    description: 'Tutorials and other helpful resources for learning web development.',
   
     openGraph: {
         title: 'Writings - Ryan Moon',
-        description: 'Tutorials and other helpful resources for learning about web development and security practices.',
+        description: 'Tutorials and other helpful resources for learning web development.',
     }
   }
 
   return (
-    <>
+    <Transition>
       <NextSeo {...SEO} />
-      <div className="blog">
-        <h1>Writings</h1>
-        <p>Tutorials and other helpful resources for learning about web development and security practices.</p>
-        <hr />
+      <Center pt="28" pb="8" >
+        <Heading fontSize="2xl" lineHeight="1.4" color="gray.700" fontWeight="bold" >Writings.</Heading>
+        <Text fontSize="1.05rem" color="#323b4e" py="1" >Tutorials and other helpful resources for learning web development.</Text>
 
-        <div className="posts">
-          {posts.length > 0 &&
-            <>
-              {posts.map(post => (
-                <div className="card" key={post.id}>
-                  <img src={post.feature_image} alt={post.title} />
-                  <h2><Link href={"/blog/" + post.slug}><a>{post.title}</a></Link></h2>
-                  <p>{post.excerpt}</p>
-                  <p className="published">{formatDate(post.published_at)} <span>-</span> {post.reading_time} min read</p>
-                </div>
-              ))}
-            </>
-          }
-        </div>
-      </div>
-    </>
+        {posts.length > 0 && posts.map(post => (
+          <Link href={"/blog/" + post.slug} key={post.id}>
+            <a>
+              <Box transition=".2s all" display="block" my="4" _hover={{ cursor: "pointer", 
+                textDecoration: "none", transform: "translate(0, -2px)", boxShadow: "lg" }} >
+
+                <Grid templateColumns="3fr 6fr" gap="6" p="4" 
+                  bg="gray.100" borderWidth="1px" borderColor="gray.300" borderRadius="md" >
+
+                  <Image src={post.feature_image} alt={post.title} />
+                  <Box>
+                    <Text fontSize="2xl" color="gray.700" fontWeight="bold" >{post.title}</Text>
+                    <Text className="css-wpqmcj" fontSize="md" color="gray.600" my=".15em" >{post.excerpt}</Text>
+                    <Text color="gray.600" fontSize="sm" lineHeight="2">{formatDate(post.published_at)} - {post.reading_time} min read</Text>
+                  </Box>
+                  
+                </Grid>
+              </Box>
+            </a>
+          </Link>
+        ))}
+        
+      </Center>
+    </Transition>
   )
 }
 

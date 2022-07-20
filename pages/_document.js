@@ -10,10 +10,12 @@ class Doc extends Document {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
+        {/*
         <link rel="preload" href="/fonts/source-sans-pro/source-sans-pro-400.woff2" as="font" crossOrigin="" />
         <link rel="preload" href="/fonts/source-sans-pro/source-sans-pro-600.woff2" as="font" crossOrigin="" />
         <link rel="preload" href="/fonts/source-sans-pro/source-sans-pro-700.woff2" as="font" crossOrigin="" />
         <link rel="preload" href="/fonts/source-serif-pro/source-serif-pro-400.woff2" as="font" crossOrigin="" />
+        */}
         
         <link rel="stylesheet" href="https://i.icomoon.io/public/870f1d17ba/ryanmooncom/style.css"></link>
         <script defer data-domain="ryanmoon.com" src="https://pa.inspin.co/js/latest.js" />

@@ -7,7 +7,7 @@ const content_api_key = process.env.CONTENT_API_KEY
 const ghost = new GhostContentAPI({
   url: blog_url,
   key: content_api_key,
-  version: "v3"
+  version: "v4.0"
 })
 
 export async function getPosts({ filter, order, limit }) {
